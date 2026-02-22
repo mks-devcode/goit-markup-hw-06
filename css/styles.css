@@ -108,7 +108,7 @@ img {
 
 /* region mobile mainmenu */
 
-.mobile-menu-backdrop {
+.mobile-menu {
   position: fixed;
   z-index: 999;
   background-color: #fff;
@@ -116,6 +116,7 @@ img {
   height: 100%;
   top: 0;
   left: 0;
+  overflow: auto;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -126,14 +127,14 @@ img {
     transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.mobile-menu-backdrop.is-open {
+.mobile-menu.is-open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
   transform: translateX(0);
 }
 
-.mobile-menu {
+.mobile-menu-wrap {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -199,12 +200,6 @@ img {
   column-gap: 40px;
 }
 
-.mobile-menu.is-open {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
 .close-menu {
   position: absolute;
   border: none;
@@ -233,7 +228,7 @@ img {
 
 /* region header tablet */
 @media screen and (min-width: 768px) {
-  .mobile-menu-backdrop {
+  .mobile-menu {
     display: none;
   }
 
@@ -465,7 +460,7 @@ img {
   }
 }
 
-@media screen and (min-resolution: 192dpi) {
+@media screen and (min-width: 768px) and (min-resolution: 192dpi) {
   .section-hero {
     background-image:
       linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
@@ -505,7 +500,7 @@ img {
   }
 }
 
-@media screen and (min-resolution: 192dpi) {
+@media screen and (min-width: 1158px) and (min-resolution: 192dpi) {
   .section-hero {
     background-image:
       linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
